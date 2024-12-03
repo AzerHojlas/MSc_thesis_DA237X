@@ -1,4 +1,0 @@
-#id: "org.mal-lang.redigoLang"
-#version: "0.0.1"
-
-include "redigoLang.mal"
