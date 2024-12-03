@@ -1,0 +1,29 @@
+
+include "ComputeResources.mal"
+include "DataResources.mal"
+include "IAM.mal"
+include "User.mal"
+include "Networking.mal"
+include "Vulnerability.mal"
+
+category Additions {
+
+	asset Database extends Application
+	{
+		| physicalAccessAchieved
+	}
+
+	asset VirtualMachine extends Hardware
+	{
+		| physicalAccess
+	}
+
+	asset CWE_862_Missing_Authorization extends SoftwareVulnerability
+	user info: "Database Server weakness. The product does not perform an authorization check when an actor attempts to access a resource or perform an action."
+	{
+		|	ExploitAttempted
+			developer info: "XML file CWE mapping"
+			-> application.fullAccess
+	}
+}
+
